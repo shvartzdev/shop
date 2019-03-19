@@ -3,7 +3,7 @@ import { Switch, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { PropTypes } from 'prop-types';
 import Phones from './node_modules/containers/Phones';
-import PhoneCard from './node_modules/containers/PhoneCard';
+import PhoneCard from './node_modules/containers/PhoneList';
 
 const Root = ({ store }) => (
   <Fragment>
