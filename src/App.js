@@ -1,11 +1,21 @@
 import React, { Component, Fragment } from 'react';
-import routes from './Routes';
+import { createStore, applyMiddleware } from 'redux';
+import reducers from 'reducers';
+import thunk from 'redux-thunk';
+import { composeWithDevTools } from 'redux-devtools-extension';
+
+
+import Routes from './Routes';
 
 class App extends Component {
   render() {
+    const store = createStore(reducers, composeWithDevTools(
+      applyMiddleware(thunk),
+    ));
+
     return (
       <Fragment>
-        {routes}
+        <Routes store={store} />
       </Fragment>
     );
   }
